@@ -10,4 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/tasks', 'TaskController@index');
+Route::get('/', 'TaskController@index');
+Route::get('/todo/create', 'TaskController@create');
+Route::post('/todo', 'TaskController@store');
