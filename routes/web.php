@@ -13,3 +13,5 @@
 Route::get('/', 'TaskController@index');
 Route::get('/todo/create', 'TaskController@create');
 Route::post('/todo', 'TaskController@store');
+Route::get('/todos/{task}/edit', 'TaskController@edit');
+Route::put('/todos/{task}', 'TaskController@update');

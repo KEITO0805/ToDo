@@ -15,12 +15,12 @@
                <p>{{$task->task}}</p>
                <p>{{$task->period}}</p>
                <button>削除</button>
-               <button>編集</button>
+               <button><a href="/todos/{{ $task->id }}/edit">編集</a></button>
             </div>
          @endforeach
         </div>
         <button>
             <a href="/todo/create">追加</a>
         </button>
-        　
+   </body>     　
 </html>
