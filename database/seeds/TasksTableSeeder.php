@@ -15,7 +15,7 @@ class TasksTableSeeder extends Seeder
         $now = Carbon::now();
         DB::table('tasks')->insert([
           'period' => '2022-02-13',
-          'check' => '1',
+          'check' => '2',
           'task' => 'homework',
           'user_id' => '1', 
           'created_at' => $now,
@@ -23,7 +23,7 @@ class TasksTableSeeder extends Seeder
         ]);
          DB::table('tasks')->insert([
           'period' => '2022-02-14',
-          'check' => '1',
+          'check' => '2',
           'task' => 'game',
           'user_id' => '1', 
           'created_at' => $now,
@@ -31,7 +31,7 @@ class TasksTableSeeder extends Seeder
         ]);
          DB::table('tasks')->insert([
           'period' => '2022-02-15',
-          'check' => '1',
+          'check' => '2',
           'task' => 'housework',
           'user_id' => '1', 
           'created_at' => $now,
@@ -39,7 +39,7 @@ class TasksTableSeeder extends Seeder
         ]);
          DB::table('tasks')->insert([
           'period' => '2022-02-16',
-          'check' => '1',
+          'check' => '2',
           'task' => 'japanese',
           'user_id' => '1', 
           'created_at' => $now,
@@ -47,7 +47,7 @@ class TasksTableSeeder extends Seeder
         ]);
          DB::table('tasks')->insert([
           'period' => '2022-02-17',
-          'check' => '1',
+          'check' => '2',
           'task' => 'english',
           'user_id' => '1', 
           'created_at' => $now,

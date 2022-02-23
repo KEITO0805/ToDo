@@ -34,4 +34,9 @@ class TaskController extends Controller
         $task->fill($input)->save();
         return redirect('/');
     }
+    public function delete(Task $task)
+    {
+        $task->delete();
+        return redirect('/');
+    }
 }
