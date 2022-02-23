@@ -14,7 +14,11 @@
                <input type="checkbox" name="os" value="win7">
                <p>{{$task->task}}</p>
                <p>{{$task->period}}</p>
-               <button>削除</button>
+               <form action="/todos/{{ $task->id }}"  method="post" style="display:inline">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">削除</button> 
+                </form>
                <button><a href="/todos/{{ $task->id }}/edit">編集</a></button>
             </div>
          @endforeach
