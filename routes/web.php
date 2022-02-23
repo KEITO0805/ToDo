@@ -16,3 +16,5 @@ Route::post('/todo', 'TaskController@store');
 Route::get('/todos/{task}/edit', 'TaskController@edit');
 Route::put('/todos/{task}', 'TaskController@update');
 Route::delete('/todos/{task}', 'TaskController@delete');
+Route::get('/todo/complete', 'TaskController@complete');
+Route::put('/full/{task}', 'TaskController@full');
