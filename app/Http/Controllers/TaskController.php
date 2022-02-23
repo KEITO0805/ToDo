@@ -22,4 +22,16 @@ class TaskController extends Controller
         $task->fill($input)->save();
         return redirect('/');
     }
+    public function edit(Task $task)
+    {
+        return view('edit')->with(['task' => $task]);
+    }
+    public function update(Request $request, Task $task)
+    {
+        $input = $request['todo'];
+        $input += ['user_id' => 1];
+        $input += ['check' => 2];
+        $task->fill($input)->save();
+        return redirect('/');
+    }
 }
