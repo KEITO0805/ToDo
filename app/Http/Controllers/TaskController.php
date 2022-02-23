@@ -8,7 +8,8 @@ class TaskController extends Controller
 {
     public function index(Task $task)
     {
-        return view('index')->with(['tasks' => $task->get()]);  
+        $notcomplete = $task->where('check',1)->get();
+        return view('index')->with(['tasks' => $notcomplete]);  
     }
     public function create()
     { 
@@ -38,5 +39,21 @@ class TaskController extends Controller
     {
         $task->delete();
         return redirect('/');
+    }
+    public function complete(Task $task)
+    {
+        $complete = $task->where('check',2)->get();
+        return view('complete')->with(['tasks' => $complete]);  
+    }
+    public function full(Task $task)
+    {
+        $input = [];
+        $tasks = new Task;
+        $input += ['period' => $task->period];
+        $input += ['task' => $task->task];
+        $input += ['user_id' => $task->user_id];
+        $input += ['check' => 2];
+        $tasks->fill($input)->save();
+        return redirect('/todo/complete')->with('message', '登録が完了しました。');
     }
 }

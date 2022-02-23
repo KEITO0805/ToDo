@@ -7,8 +7,10 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
+        @if(Session::has('message'))
+        メッセージ：{{ session('message') }}
+        @endif
         <h1>ToDoリスト</h1>
-        <button><a href="/todo/complete">達成済み</a></button>
         <div class='todos'>
          @foreach($tasks as $task)
             <div class='todo'>
@@ -20,16 +22,9 @@
                     <button type="submit">削除</button> 
                 </form>
                <button><a href="/todos/{{ $task->id }}/edit">編集</a></button>
-               <form action="/full/{{ $task->id }}"  method="post" style="display:inline">
-                    @csrf
-                    @method('PUT')
-                    <button type="submit">達成！</button> 
-                </form>
             </div>
          @endforeach
         </div>
-        <button>
-            <a href="/todo/create">追加</a>
-        </button>
+        <button><a href="/">戻る</a></button>
    </body>     　
 </html>
