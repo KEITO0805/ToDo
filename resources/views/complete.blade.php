@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <title>ToDo</title>
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    </head>
-    <body>
+@extends('layouts.app')　　　　　　　　　　　　　　　　　　
+
+@section('content')
         @if(Session::has('message'))
         メッセージ：{{ session('message') }}
         @endif
@@ -26,5 +20,4 @@
          @endforeach
         </div>
         <button><a href="/">戻る</a></button>
-   </body>     　
-</html>
+@endsection
