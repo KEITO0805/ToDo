@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware' => ['auth']], function(){
 Route::get('/', 'TaskController@index');
 Route::get('/todo/create', 'TaskController@create');
 Route::post('/todo', 'TaskController@store');
@@ -18,3 +19,5 @@ Route::put('/todos/{task}', 'TaskController@update');
 Route::delete('/todos/{task}', 'TaskController@delete');
 Route::get('/todo/complete', 'TaskController@complete');
 Route::put('/full/{task}', 'TaskController@full');
+});
+Auth::routes();
