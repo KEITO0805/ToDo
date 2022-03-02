@@ -54,6 +54,6 @@ class TaskController extends Controller
         $input += ['user_id' => $task->user_id];
         $input += ['check' => 2];
         $tasks->fill($input)->save();
-        return redirect('/todo/complete')->with('message', '登録が完了しました。');
+        return redirect('/todo/complete')->with('message','タスクを達成しました！！');
     }
 }

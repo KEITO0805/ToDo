@@ -14,16 +14,16 @@
                     <button class='btn btn-danger'
                     type="submit">削除</button> 
                 </form>
-               <button><a href="/todos/{{ $task->id }}/edit">編集</a></button>
+               <button class="btn btn-success"><a href="/todos/{{ $task->id }}/edit">編集</a></button>
                <form action="/full/{{ $task->id }}"  method="post" style="display:inline">
                     @csrf
                     @method('PUT')
-                    <button type="submit">達成！</button> 
+                    <button type="submit" class="btn btn-primary">達成！</button> 
                 </form>
             </div>
          @endforeach
         </div>
-        <button>
+        <button class="btn btn-warning">
             <a href="/todo/create">追加</a>
         </button>　　　　　　　　　  　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
 @endsection
